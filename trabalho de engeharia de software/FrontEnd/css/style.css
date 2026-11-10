@@ -1,0 +1,66 @@
+/* PRINCIPAL */
+
+/* Configurações Globais */
+body {
+  font-family: 'Inter', sans-serif;
+  color: #f7f4fb;
+  background-color: #0b0a10;
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Estilos Reutilizáveis dos Cards de Produto */
+.product-card {
+  background-color: #f9f8fb;
+  color: #17131d;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.4);
+}
+
+/* Badge de Desconto */
+.badge-off {
+  position: absolute;
+  top: 0.625rem;
+  left: 0.625rem;
+  background-color: #00c27a;
+  color: #062919;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  z-index: 10;
+}
+
+/* Botão Favoritos */
+.wishlist-btn {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: #374151;
+  z-index: 10;
+  transition: color 0.15s ease;
+}
+
+.wishlist-btn:hover {
+  color: #b14cff;
+}

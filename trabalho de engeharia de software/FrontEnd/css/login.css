@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600&display=swap');
+
+:root {
+  --bg: #0d0a14;
+  --purple-1: #a24bef;
+  --purple-2: #7c34d8;
+  --purple-3: #6527c9;
+  --purple-tail: #a74bee;
+  --accent: #a855f7;
+  --text: #f5f0ff;
+  --muted: #9a93ad;
+  --brand: #6d2fd9;
+  --brand-text: #7e22ce;
+  --light-bg: #f7f5f9;
+  --ink: #0d0a14;
+  --line: #e2dee8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body { font-family: 'Inter', sans-serif; background: var(--light-bg); }
+
+/* ===== LAYOUT EM DUAS COLUNAS ===== */
+.page {
+  display: grid;
+  grid-template-columns: 52.2% 47.8%;
+  min-height: 100vh;
+}
+
+/* ===== LADO ESQUERDO (escuro) ===== */
+.left {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+.glow {
+  position: absolute;
+  left: 49%; top: 45%;
+  width: 900px; height: 900px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle,
+    rgba(124, 58, 237, 0.30) 0%,
+    rgba(110, 45, 210, 0.20) 18%,
+    rgba(90, 35, 170, 0.09) 32%,
+    transparent 52%);
+  pointer-events: none;
+}
+
+.grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+.vignette {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 45%, transparent 55%, rgba(0,0,0,0.35) 100%);
+  pointer-events: none;
+}
+
+.logo {
+  position: absolute;
+  left: 14.8%; top: 40px;
+  width: 38px; height: 39px;
+  filter: drop-shadow(0 0 7px rgba(168, 85, 247, 0.65));
+}
+
+.cat-big {
+  position: absolute;
+  left: 49%; top: 45%;
+  width: 240px; height: 245px;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 30px rgba(124, 58, 237, 0.30));
+}
+
+.content {
+  position: absolute;
+  left: 14.8%;
+  bottom: 20px;
+}
+
+.tag {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+  color: var(--accent);
+  text-transform: uppercase;
+  line-height: 14px;
+}
+
+.left h1 {
+  margin-top: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 58px;
+... (176 linhas)

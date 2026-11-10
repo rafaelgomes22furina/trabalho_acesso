@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nekko - Entrar</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0d0a14;
+      --purple-1: #a24bef;
+      --purple-2: #7c34d8;
+      --purple-3: #6527c9;
+      --purple-tail: #a74bee;
+      --accent: #a855f7;
+      --text: #f5f0ff;
+      --muted: #9a93ad;
+      --brand: #6d2fd9;
+      --brand-text: #7e22ce;
+      --light-bg: #f7f5f9;
+      --ink: #0d0a14;
+      --line: #e2dee8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { font-family: 'Inter', sans-serif; background: var(--light-bg); }
+
+    /* ===== LAYOUT EM DUAS COLUNAS ===== */
+    .page {
+      display: grid;
+      grid-template-columns: 52.2% 47.8%;
+      min-height: 100vh;
+    }
+
+    /* ===== LADO ESQUERDO (escuro) ===== */
+    .left {
+      position: relative;
+      overflow: hidden;
+      background: var(--bg);
+      min-height: 100vh;
+    }
+
+    .glow {
+      position: absolute;
+      left: 49%; top: 45%;
+      width: 900px; height: 900px;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle,
+        rgba(124, 58, 237, 0.30) 0%,
+        rgba(110, 45, 210, 0.20) 18%,
+        rgba(90, 35, 170, 0.09) 32%,
+        transparent 52%);
+      pointer-events: none;
+    }
+
+    .grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+    }
+
+    .vignette {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 45%, transparent 55%, rgba(0,0,0,0.35) 100%);
+      pointer-events: none;
+    }
+
+    .logo {
+      position: absolute;
+      left: 14.8%; top: 40px;
+      width: 38px; height: 39px;
+      filter: drop-shadow(0 0 7px rgba(168, 85, 247, 0.65));
+    }
+
+    .cat-big {
+      position: absolute;
+      left: 49%; top: 45%;
+      width: 240px; height: 245px;
+      transform: translate(-50%, -50%);
+      filter: drop-shadow(0 0 30px rgba(124, 58, 237, 0.30));
+    }
+
+    .content {
+      position: absolute;
+      left: 14.8%;
+      bottom: 20px;
+    }
+
+    .tag {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.17em;
+      color: var(--accent);
+      text-transform: uppercase;
+      line-height: 14px;
+    }
+
+    .left h1 {
+      margin-top: 12px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 58px;
+      line-height: 62px;
+      letter-spacing: -0.005em;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .left h1 span { color: var(--accent); }
+
+    .sub {
+      margin-top: 12px;
+      width: 460px;
+      font-size: 16px;
+      line-height: 25px;
+      color: var(--muted);
+    }
+
+    /* ===== LADO DIREITO (claro) ===== */
+    .right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--light-bg);
+      padding: 40px 24px;
+    }
+
+    .back {
+      position: absolute;
+      top: 29px; right: 26px;
+      font-size: 11px;
+      color: #5b5668;
+      text-decoration: none;
+    }
+    .back:hover { color: var(--brand); }
+
+    .form-wrap { width: 100%; max-width: 390px; }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      line-height: 14px;
+    }
+
+    .form-wrap h2 {
+      margin-top: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 29px;
+      line-height: 38px;
+      color: var(--ink);
+      letter-spacing: -0.005em;
+    }
+
+    .lead {
+      margin-top: 12px;
+      font-size: 12.5px;
+      color: #6b6678;
+      line-height: 18px;
+    }
+
+    form { margin-top: 33px; }
+
+    .field + .field { margin-top: 20px; }
+
+    label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      height: 45px;
+      padding: 0 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12.5px;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    input::placeholder { color: #7d7889; }
+    input:focus {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px rgba(109, 47, 217, 0.15);
+    }
+
+    .forgot {
+      display: block;
+      margin-top: 9px;
+      text-align: right;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--brand-text);
+      text-decoration: none;
+    }
+    .forgot:hover { text-decoration: underline; }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      height: 45px;
+      margin-top: 13px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      background: var(--brand);
+      border: 0;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(109, 47, 217, 0.28);
+      transition: background .15s;
+    }
+    .btn-primary:hover { background: #5b21b6; }
+
+    .divider {
+      margin-top: 26px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      font-size: 8.5px;
+      color: #8a8596;
+      line-height: 14px;
+    }
+
+    .btn-google {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      height: 45px;
+      margin-top: 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background .15s;
+    }
+    .btn-google:hover { background: #faf9fb; }
+    .btn-google svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+    .signup {
+      margin-top: 25px;
+      text-align: center;
+      font-size: 10px;
+      color: #6b6678;
+    }
+    .signup a {
+      font-weight: 700;
+      color: var(--brand-text);
+      text-decoration: none;
+    }
+    .signup a:hover { text-decoration: underline; }
+
+    /* ===== TELAS MENORES ===== */
+    @media (max-width: 900px) {
+      .page { grid-template-columns: 1fr; }
+      .left { min-height: auto; padding: 40px 28px 48px; display: flex; flex-direction: column; gap: 32px; }
+      .logo, .cat-big, .content { position: relative; left: auto; top: auto; bottom: auto; transform: none; }
+      .cat-big { align-self: center; }
+      .left h1 { font-size: 38px; line-height: 1.15; white-space: normal; }
+      .sub { width: auto; max-width: 460px; }
+      .right { padding: 72px 24px 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Símbolo do gato (usado nos dois tamanhos) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="cat" viewBox="0 0 240 245">
+        <polygon points="55,0 111,60 22,76" fill="var(--purple-1)"/>
+        <polygon points="188,6 213,92 161,111 113,60" fill="var(--purple-3)"/>
+        <polygon points="22,76 111,60 106,134 128,218 51,218 0,147" fill="var(--purple-2)"/>
+        <polygon points="111,60 161,111 128,218 106,134" fill="var(--purple-1)"/>
+        <path d="M150 168 C 185 168 213 172 223 192 C 228 208 223 222 212 232"
+              fill="none" stroke="var(--purple-tail)" stroke-width="31"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="page">
+
+    <!-- ===== LADO ESQUERDO ===== -->
+    <aside class="left">
+      <div class="glow"></div>
+      <div class="grid"></div>
+      <div class="vignette"></div>
+
+      <svg class="logo" role="img" aria-label="Logo Nekko"><use href="#cat"/></svg>
+      <svg class="cat-big" role="img" aria-label="Gato"><use href="#cat"/></svg>
+
+      <section class="content">
+        <p class="tag">Compre. Retire. Curta.</p>
+        <h1>Tudo o que você quer,<br><span>perto de você.</span></h1>
+        <p class="sub">Compre online e retire na loja mais conveniente, sem filas e sem frete.</p>
+      </section>
+    </aside>
+
+    <!-- ===== LADO DIREITO ===== -->
+    <main class="right">
+      <a href="#" class="back">← Voltar para a loja</a>
+
+      <div class="form-wrap">
+        <p class="eyebrow">Sua conta Nekko</p>
+        <h2>Que bom ter você aqui.</h2>
+        <p class="lead">Entre para continuar sua compra.</p>
+
+        <form>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="voce@email.com">
+          </div>
+
+          <div class="field">
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" placeholder="••••••••">
+          </div>
+
+          <a href="#" class="forgot">Esqueceu a senha?</a>
+
+          <button type="submit" class="btn-primary">Entrar</button>
+
+          <div class="divider">ou continue com</div>
+
+          <button type="button" class="btn-google">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+            Continuar com o Google
+          </button>
+        </form>
+
+        <p class="signup">Ainda não tem uma conta? <a href="#">Criar conta</a></p>
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

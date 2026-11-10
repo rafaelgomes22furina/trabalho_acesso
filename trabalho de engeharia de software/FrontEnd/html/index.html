@@ -1,0 +1,420 @@
+
+
+<!-- PAGINA PRINCIPAL -->
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEKKO - Compre online. Retire do seu jeito.</title>
+  
+  <!-- Fontes do Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0b0a10',
+            panel: '#15121f',
+            purple: '#6c2bd9',
+            jelly: '#b14cff',
+            green: '#00c27a',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Ligação com o arquivo CSS separado -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-[#0b0a10] text-[#f7f4fb]">
+
+  <div class="app min-h-screen flex flex-col">
+    <!-- 1. CABEÇALHO SUPERIOR -->
+    <header class="sticky top-0 z-50 bg-[#0b0a10]/95 backdrop-blur-md border-b border-[#292334]">
+      <div class="max-w-[1240px] mx-auto px-6">
+        <!-- Linha 1: Logo, Pesquisa e Conta -->
+        <div class="h-[74px] flex items-center justify-between gap-8">
+          <div class="flex items-center gap-3 cursor-pointer">
+            <svg class="w-8 h-8 text-[#b14cff]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            <span class="font-extrabold text-2xl tracking-widest text-white font-['Poppins']">NEKKO</span>
+          </div>
+
+          <div class="flex-1 max-w-[590px] h-[44px] flex bg-white rounded-xl overflow-hidden">
+            <input type="text" placeholder="O que você está procurando?" class="flex-1 px-5 text-sm text-[#26212d] outline-none">
+            <button class="w-[50px] bg-[#6c2bd9] text-white flex items-center justify-center">🔍</button>
+          </div>
+
+          <div class="flex items-center gap-5 text-xs text-[#d4ceda]">
+            <a href="login.html" class="flex items-center gap-2 cursor-pointer hover:text-white">
+              <span>👤</span>
+              <div class="flex flex-col">
+                <small class="text-[10px] text-[#8e8799]">Boas-vindas!</small>
+                <strong class="text-xs">Entre ou cadastre-se</strong>
+              </div>
+            </a>
+            <button class="text-xl">♡</button>
+            <a href="login.html" class="text-xl relative" aria-label="Carrinho">
+              🛒
+              <span class="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-[#b14cff] text-white text-[10px] flex items-center justify-center font-bold">1</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Linha 2: Endereço de Retirada e Categorias -->
+        <div class="h-[40px] flex items-center justify-between text-xs text-[#a9a2b2] border-t border-[#1e1929]">
+          <div class="flex items-center gap-6">
+            <span class="flex items-center gap-1 text-[#dcd7e2] font-semibold">
+              📍 Retirar em: <strong class="text-[#b14cff] cursor-pointer">Shopping Bourbon ❯</strong>
+            </span>
+            <nav class="flex gap-5 text-gray-300">
+              <a href="#" class="hover:text-white">Categorias</a>
+              <a href="#" class="hover:text-white">Ofertas do dia</a>
+              <a href="#" class="hover:text-white">Casa inteligente</a>
+              <a href="#" class="hover:text-white">Eletrônicos</a>
+              <a href="#" class="hover:text-white">Acessórios</a>
+            </nav>
+          </div>
+          <span class="text-[#00c27a] font-medium">⏱ Pronto em até 1 hora</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="max-w-[1240px] mx-auto px-6 py-8 flex-1 space-y-12">
+
+      <!-- 2. BANNER HERO PRINCIPAL -->
+      <section class="grid grid-cols-1 lg:grid-cols-[96px_1fr_96px] gap-3">
+        <!-- Banner Lateral Esquerdo -->
+        <div class="hidden lg:flex flex-col justify-end items-center p-4 rounded-xl bg-gradient-to-b from-[#25143b] to-[#130f1b] border border-[#342348] text-center relative overflow-hidden">
+          <span class="uppercase text-[9px] font-bold text-[#b14cff] tracking-widest [writing-mode:vertical-rl] rotate-180 absolute top-5">OFERTA</span>
+          <b class="text-xs leading-tight font-['Poppins']">Som que acompanha você.</b>
+          <small class="text-[#00c27a] text-[9px] font-extrabold uppercase mt-3">ATÉ 30% OFF</small>
+        </div>
+
+        <!-- Card Central Hero -->
+        <div class="relative rounded-2xl overflow-hidden bg-[#17121f] border border-[#2a2238] min-h-[360px] flex items-center p-8 md:p-12">
+          <div class="max-w-md z-10 space-y-4">
+            <span class="text-[#b14cff] text-xs font-bold tracking-widest uppercase">SOM QUE TRANSFORMA</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight font-['Poppins']">Seu ritmo, sem limites.</h1>
+            <p class="text-[#bab3c3] text-sm">Até 35% OFF em áudio premium. Compre agora e retire ainda hoje.</p>
+            <button class="h-11 px-6 rounded-xl bg-[#6c2bd9] text-white font-bold text-xs shadow-lg shadow-[#6c2bd9]/40 hover:bg-[#5b22b8] transition-all flex items-center gap-2">
+              Quero aproveitar →
+            </button>
+          </div>
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80" class="absolute right-0 top-0 w-full md:w-3/5 h-full object-cover mix-blend-lighten opacity-80 pointer-events-none">
+        </div>
+
+        <!-- Banner Lateral Direito -->
+        <div class="hidden lg:flex flex-col justify-end items-center p-4 rounded-xl bg-gradient-to-b from-[#25143b] to-[#130f1b] border border-[#342348] text-center relative overflow-hidden">
+          <span class="uppercase text-[9px] font-bold text-[#b14cff] tracking-widest [writing-mode:vertical-rl] rotate-180 absolute top-5">CLICK & COLLECT</span>
+          <b class="text-xs leading-tight font-['Poppins']">Comprou. Passou. Levou.</b>
+          <small class="text-[#00c27a] text-[9px] font-extrabold uppercase mt-3">SEM FRETE</small>
+        </div>
+      </section>
+
+      <!-- BARRA DE VANTAGENS -->
+      <section class="bg-[#15121f] border border-[#292334] rounded-xl grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#302a39] p-4 text-xs">
+        <div class="flex items-center gap-3 justify-center p-2">
+          <span class="text-xl text-[#b14cff]">⏱</span>
+          <div>
+            <strong class="block text-white">Retire em até 1 hora</strong>
+            <small class="text-[#8e8799] text-[10px]">Em lojas selecionadas</small>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 justify-center p-2">
+          <span class="text-xl text-[#b14cff]">📍</span>
+          <div>
+            <strong class="block text-white">+120 lojas</strong>
+            <small class="text-[#8e8799] text-[10px]">Escolha a mais perto</small>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 justify-center p-2">
+          <span class="text-xl text-[#b14cff]">🔒</span>
+          <div>
+            <strong class="block text-white">Compra protegida</strong>
+            <small class="text-[#8e8799] text-[10px]">Pagamento 100% seguro</small>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 justify-center p-2">
+          <span class="text-xl text-[#b14cff]">✓</span>
+          <div>
+            <strong class="block text-white">Troca facilitada</strong>
+            <small class="text-[#8e8799] text-[10px]">Direto na loja</small>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. PRIMEIRA LISTA: MAIS VENDIDOS DA SEMANA EM ÁUDIO -->
+      <section class="space-y-4">
+        <div class="flex justify-between items-end">
+          <div>
+            <span class="text-[#b14cff] text-[10px] font-bold tracking-widest uppercase">OS QUERIDINHOS ESTÃO AQUI</span>
+            <h2 class="text-2xl font-bold font-['Poppins']">Mais vendidos da semana em Áudio</h2>
+          </div>
+          <a href="#" class="text-[#b14cff] text-xs font-bold hover:underline flex items-center gap-1">Ver tudo →</a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+          <!-- Produto 1 -->
+          <div class="product-card">
+            <span class="badge-off">27% OFF</span>
+            <button class="wishlist-btn">♡</button>
+            <div class="h-44 bg-[#e5e7eb] overflow-hidden flex items-center justify-center p-2">
+              <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&q=80" class="h-full object-contain">
+            </div>
+            <div class="p-3">
+              <div class="text-[9px] font-bold text-[#6c2bd9]">★ 4.8 <span class="text-gray-400 font-normal">(128)</span></div>
+              <h3 class="text-xs font-semibold h-9 mt-1 leading-tight">Headphone JBL Tune 520BT sem fio</h3>
+              <s class="text-[9px] text-gray-400 block mt-2">R$ 299,90</s>
+              <div class="text-lg font-bold font-['Poppins'] leading-none">R$ 219,90</div>
+              <small class="text-[9px] text-gray-500 block mt-0.5">ou 10x sem juros</small>
+              <div class="text-[9px] text-[#008e59] font-bold mt-2 flex items-center gap-1">✓ Retire hoje</div>
+            </div>
+          </div>
+
+          <!-- Produto 2 -->
+          <div class="product-card">
+            <span class="badge-off">30% OFF</span>
+            <button class="wishlist-btn">♡</button>
+            <div class="h-44 bg-[#18181b] overflow-hidden flex items-center justify-center p-2">
+              <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80" class="h-full object-contain">
+            </div>
+            <div class="p-3">
+              <div class="text-[9px] font-bold text-[#6c2bd9]">★ 4.8 <span class="text-gray-400 font-normal">(128)</span></div>
+              <h3 class="text-xs font-semibold h-9 mt-1 leading-tight">Smartwatch Fit Pro GPS + NFC</h3>
+              <s class="text-[9px] text-gray-400 block mt-2">R$ 499,90</s>
+              <div class="text-lg font-bold font-['Poppins'] leading-none">R$ 349,90</div>
+              <small class="text-[9px] text-gray-500 block mt-0.5">ou 10x sem juros</small>
+              <div class="text-[9px] text-[#008e59] font-bold mt-2 flex items-center gap-1">✓ Retire hoje</div>
+            </div>
+          </div>
+
+          <!-- Produto 3 -->
+          <div class="product-card">
+            <span class="badge-off">17% OFF</span>
+            <button class="wishlist-btn">♡</button>
+            <div class="h-44 bg-[#27272a] overflow-hidden flex items-center justify-center p-2">
+              <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&q=80" class="h-full object-contain">
+            </div>
+            <div class="p-3">
+              <div class="text-[9px] font-bold text-[#6c2bd9]">★ 4.8 <span class="text-gray-400 font-normal">(128)</span></div>
+              <h3 class="text-xs font-semibold h-9 mt-1 leading-tight">Smartphone Edge 256GB 5G</h3>
+              <s class="text-[9px] text-gray-400 block mt-2">R$ 2.299</s>
+              <div class="text-lg font-bold font-['Poppins'] leading-none">R$ 1.899</div>
+              <small class="text-[9px] text-gray-500 block mt-0.5">ou 10x sem juros</small>
+              <div class="text-[9px] text-[#008e59] font-bold mt-2 flex items-center gap-1">✓ Retire hoje</div>
+            </div>
+          </div>
+
+          <!-- Produto 4 -->
+          <div class="product-card">
+            <span class="badge-off">19% OFF</span>
+            <button class="wishlist-btn">♡</button>
+            <div class="h-44 bg-[#e2e8f0] overflow-hidden flex items-center justify-center p-2">
+              <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400&q=80" class="h-full object-contain">
+            </div>
+            <div class="p-3">
+              <div class="text-[9px] font-bold text-[#6c2bd9]">★ 4.8 <span class="text-gray-400 font-normal">(128)</span></div>
+              <h3 class="text-xs font-semibold h-9 mt-1 leading-tight">Teclado mecânico Switch Brown</h3>
+              <s class="text-[9px] text-gray-400 block mt-2">R$ 359,90</s>
+              <div class="text-lg font-bold font-['Poppins'] leading-none">R$ 289,90</div>
+              <small class="text-[9px] text-gray-500 block mt-0.5">ou 10x sem juros</small>
+              <div class="text-[9px] text-[#008e59] font-bold mt-2 flex items-center gap-1">✓ Retire hoje</div>
+            </div>
+          </div>
+
+          <!-- Produto 5 -->
+          <div class="product-card">
+            <span class="badge-off">14% OFF</span>
+            <button class="wishlist-btn">♡</button>
+            <div class="h-44 bg-[#09090b] overflow-hidden flex items-center justify-center p-2">
+              <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=400&q=80" class="h-full object-contain">
+            </div>
+            <div class="p-3">
+              <div class="text-[9px] font-bold text-[#6c2bd9]">★ 4.8 <span class="text-gray-400 font-normal">(128)</span></div>
+              <h3 class="text-xs font-semibold h-9 mt-1 leading-tight">Kit produtividade Tablet + Pencil</h3>
+              <s class="text-[9px] text-gray-400 block mt-2">R$ 3.199</s>
+              <div class="text-lg font-bold font-['Poppins'] leading-none">R$ 2.749</div>
+              <small class="text-[9px] text-gray-500 block mt-0.5">ou 10x sem juros</small>
+              <div class="text-[9px] text-[#008e59] font-bold mt-2 flex items-center gap-1">✓ Retire hoje</div>
+            </div>
+          </div>
+
+          <!-- Produto 6 -->
+          <div class="product-card">
+            <span class="badge-off">32% OFF</span>
+            <button class="wishlist-btn">♡</button>
+            <div class="h-44 bg-[#3f3f46] overflow-hidden flex items-center justify-center p-2">
+              <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400&q=80" class="h-full object-contain">
+            </div>
+            <div class="p-3">
+              <div class="text-[9px] font-bold text-[#6c2bd9]">★ 4.8 <span class="text-gray-400 font-normal">(128)</span></div>
+              <h3 class="text-xs font-semibold h-9 mt-1 leading-tight">Fone TWS Air Pulse com ANC</h3>
+              <s class="text-[9px] text-gray-400 block mt-2">R$ 249,90</s>
+              <div class="text-lg font-bold font-['Poppins'] leading-none">R$ 169,90</div>
+              <small class="text-[9px] text-gray-500 block mt-0.5">ou 10x sem juros</small>
+              <div class="text-[9px] text-[#008e59] font-bold mt-2 flex items-center gap-1">✓ Retire hoje</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. PROPAGANDA INTERMEDIÁRIA (PATROCINADO) -->
+      <section class="h-52 rounded-2xl overflow-hidden bg-gradient-to-r from-[#5316bb] via-[#6c2bd9] to-[#8b31e0] relative flex items-center p-10 md:p-12">
+        <div class="max-w-md z-10 space-y-2">
+          <span class="text-[10px] font-bold tracking-widest text-purple-200 uppercase">PATROCINADO</span>
+          <h2 class="text-3xl font-extrabold text-white font-['Poppins']">Casa conectada,<br>vida mais simples.</h2>
+          <p class="text-xs text-purple-100 opacity-90">Ofertas especiais em automação e acessórios inteligentes.</p>
+          <button class="mt-4 px-6 py-2.5 rounded-xl bg-white text-[#431298] font-bold text-xs hover:bg-gray-100 transition-all">
+            Explorar agora
+          </button>
+        </div>
+        <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80" class="absolute right-0 top-0 w-1/2 h-full object-cover opacity-40 mix-blend-overlay">
+      </section>
+
+      <!-- 5. SEGUNDA LISTA: RECOMENDAÇÕES PARA VOCÊ -->
+      <section class="space-y-4">
+        <div class="flex justify-between items-end">
+          <div>
+            <span class="text-[#b14cff] text-[10px] font-bold tracking-widest uppercase">UMA SELEÇÃO DO SEU JEITO</span>
+            <h2 class="text-2xl font-bold font-['Poppins']">Recomendações para você</h2>
+          </div>
+          <a href="#" class="text-[#b14cff] text-xs font-bold hover:underline flex items-center gap-1">Ver tudo →</a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+          <!-- Novo Produto 1 -->
+          <div class="product-card">
+            <span class="badge-off">22% OFF</span>
+            <button class="wishlist-btn">♡</button>
+            <div class="h-44 bg-[#f3f4f6] overflow-hidden flex items-center justify-center p-2">
+              <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&q=80" class="h-full object-contain">
+            </div>
+            <div class="p-3">
+              <div class="text-[9px] font-bold text-[#6c2bd9]">★ 4.9 <span class="text-gray-400 font-normal">(84)</span></div>
+              <h3 class="text-xs font-semibold h-9 mt-1 leading-tight">Câmera Mirrorless 4K Ultra HD</h3>
+              <s class="text-[9px] text-gray-400 block mt-2">R$ 4.599</s>
+              <div class="text-lg font-bold font-['Poppins'] leading-none">R$ 3.587</div>
+              <small class="text-[9px] text-gray-500 block mt-0.5">ou 10x sem juros</small>
+              <div class="text-[9px] text-[#008e59] font-bold mt-2 flex items-center gap-1">✓ Retire hoje</div>
+            </div>
+          </div>
+
+          <!-- Novo Produto 2 -->
+          <div class="product-card">
+            <span class="badge-off">15% OFF</span>
+            <button class="wishlist-btn">♡</button>
+            <div class="h-44 bg-[#111827] overflow-hidden flex items-center justify-center p-2">
+              <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&q=80" class="h-full object-contain">
+            </div>
+            <div class="p-3">
+              <div class="text-[9px] font-bold text-[#6c2bd9]">★ 4.7 <span class="text-gray-400 font-normal">(210)</span></div>
+              <h3 class="text-xs font-semibold h-9 mt-1 leading-tight">Monitor Gamer Curvo 165Hz 1ms</h3>
+              <s class="text-[9px] text-gray-400 block mt-2">R$ 1.699</s>
+              <div class="text-lg font-bold font-['Poppins'] leading-none">R$ 1.444</div>
+              <small class="text-[9px] text-gray-500 block mt-0.5">ou 10x sem juros</small>
+              <div class="text-[9px] text-[#008e59] font-bold mt-2 flex items-center gap-1">✓ Retire hoje</div>
+            </div>
+          </div>
+
+          <!-- Novo Produto 3 -->
+          <div class="product-card">
+            <span class="badge-off">25% OFF</span>
+            <button class="wishlist-btn">♡</button>
+            <div class="h-44 bg-[#e5e7eb] overflow-hidden flex items-center justify-center p-2">
+              <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=400&q=80" class="h-full object-contain">
+            </div>
+            <div class="p-3">
+              <div class="text-[9px] font-bold text-[#6c2bd9]">★ 4.8 <span class="text-gray-400 font-normal">(156)</span></div>
+              <h3 class="text-xs font-semibold h-9 mt-1 leading-tight">Mouse Ergonômico Bluetooth RGB</h3>
+              <s class="text-[9px] text-gray-400 block mt-2">R$ 199,90</s>
+              <div class="text-lg font-bold font-['Poppins'] leading-none">R$ 149,90</div>
+              <small class="text-[9px] text-gray-500 block mt-0.5">ou 10x sem juros</small>
+              <div class="text-[9px] text-[#008e59] font-bold mt-2 flex items-center gap-1">✓ Retire hoje</div>
+            </div>
+          </div>
+
+          <!-- Novo Produto 4 -->
+          <div class="product-card">
+            <span class="badge-off">18% OFF</span>
+            <button class="wishlist-btn">♡</button>
+            <div class="h-44 bg-[#d1d5db] overflow-hidden flex items-center justify-center p-2">
+              <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?w=400&q=80" class="h-full object-contain">
+            </div>
+            <div class="p-3">
+              <div class="text-[9px] font-bold text-[#6c2bd9]">★ 4.6 <span class="text-gray-400 font-normal">(92)</span></div>
+              <h3 class="text-xs font-semibold h-9 mt-1 leading-tight">Caixa de Som Portátil Waterproof</h3>
+              <s class="text-[9px] text-gray-400 block mt-2">R$ 329,90</s>
+              <div class="text-lg font-bold font-['Poppins'] leading-none">R$ 269,90</div>
+              <small class="text-[9px] text-gray-500 block mt-0.5">ou 10x sem juros</small>
+              <div class="text-[9px] text-[#008e59] font-bold mt-2 flex items-center gap-1">✓ Retire hoje</div>
+            </div>
+          </div>
+
+          <!-- Novo Produto 5 -->
+          <div class="product-card">
+            <span class="badge-off">10% OFF</span>
+            <button class="wishlist-btn">♡</button>
+            <div class="h-44 bg-[#1f2937] overflow-hidden flex items-center justify-center p-2">
+              <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&q=80" class="h-full object-contain">
+            </div>
+            <div class="p-3">
+              <div class="text-[9px] font-bold text-[#6c2bd9]">★ 4.9 <span class="text-gray-400 font-normal">(312)</span></div>
+              <h3 class="text-xs font-semibold h-9 mt-1 leading-tight">Console Retro Portátil IPS 64GB</h3>
+              <s class="text-[9px] text-gray-400 block mt-2">R$ 549,00</s>
+              <div class="text-lg font-bold font-['Poppins'] leading-none">R$ 494,10</div>
+              <small class="text-[9px] text-gray-500 block mt-0.5">ou 10x sem juros</small>
+              <div class="text-[9px] text-[#008e59] font-bold mt-2 flex items-center gap-1">✓ Retire hoje</div>
+            </div>
+          </div>
+
+          <!-- Novo Produto 6 -->
+          <div class="product-card">
+            <span class="badge-off">40% OFF</span>
+            <button class="wishlist-btn">♡</button>
+            <div class="h-44 bg-[#9ca3af] overflow-hidden flex items-center justify-center p-2">
+              <img src="https://images.unsplash.com/photo-1622445268465-843d61463a73?w=400&q=80" class="h-full object-contain">
+            </div>
+            <div class="p-3">
+              <div class="text-[9px] font-bold text-[#6c2bd9]">★ 4.7 <span class="text-gray-400 font-normal">(65)</span></div>
+              <h3 class="text-xs font-semibold h-9 mt-1 leading-tight">Dock Carregador Sem Fio 3 em 1</h3>
+              <s class="text-[9px] text-gray-400 block mt-2">R$ 299,00</s>
+              <div class="text-lg font-bold font-['Poppins'] leading-none">R$ 179,40</div>
+              <small class="text-[9px] text-gray-500 block mt-0.5">ou 10x sem juros</small>
+              <div class="text-[9px] text-[#008e59] font-bold mt-2 flex items-center gap-1">✓ Retire hoje</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 6. RODAPÉ OFICIAL -->
+    <footer class="border-t border-[#1e1929] bg-[#09080d] py-6 text-xs text-[#847e8a] mt-auto">
+      <div class="max-w-[1240px] mx-auto px-6 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <svg class="w-6 h-6 text-[#b14cff]" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          <strong class="text-white font-['Poppins'] tracking-wider text-sm">NEKKO</strong>
+          <span class="text-gray-500 text-xs border-l border-gray-800 pl-3">Compre online. Retire do seu jeito.</span>
+        </div>
+        <div class="text-[11px] text-gray-500">
+          © 2026 Nekko. Todos os direitos reservados.
+        </div>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
